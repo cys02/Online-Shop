@@ -1,0 +1,44 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.usermotto {
+  margin-top: 200px;
+}
+.select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.select-flow{
+  flex: 1;
+  text-align: center;/*水平居中*/
+}
+.select-collect{
+  flex: 1;
+  text-align: center;/*水平居中*/
+}
+.select-order{
+  flex: 1;
+  text-align: center;/*水平居中*/
+}
+.select-info{
+  flex: 1;
+  text-align: center;/*水平居中*/
+}
+.select-img{
+    width: 156rpx;
+    height: 100rpx;
+}

@@ -1,0 +1,9 @@
+<view class="father">
+    <view class="down-sp">
+      <view data-item="{{item}}" class="down-item" wx:for="{{shoppings}}" wx:key="item"><image class="logo" mode="aspectFit"  src="{{api}}{{item.logo}}"></image>
+        <view>{{item.product}}</view>
+        <view>总价￥{{item.total}}</view>
+        <view>{{item.ftime}}</view>
+      </view>
+    </view>
+</view>

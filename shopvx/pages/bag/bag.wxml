@@ -1,0 +1,17 @@
+<view class="father">
+    <view  class="down-sp">
+      <view catchtap="detail" data-item="{{item}}" class="down-item" wx:for="{{bags}}" wx:key="item"><image class="logo" mode="aspectFit"  src="{{api}}{{item.logo}}"></image>
+        <view>{{item.product}}</view>
+        <view>￥{{item.price}}</view>
+        <view>库存：{{item.num}}</view>
+      </view>
+    </view>
+</view>
+
+<view class="bag-down">
+  <view class="bag-one">
+      <checkbox class="checkbox">全选</checkbox>
+  </view>
+  <view class="bag-two">合计{{}}元</view>
+  <view class="bag-three">立即购买</view>
+</view>

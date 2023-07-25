@@ -1,0 +1,16 @@
+.father{
+  overflow: hidden;/*里面用了浮动，清除浮动的影响*/
+}
+.logo{
+  margin-right: 20rpx;
+  float:left;
+  width: 160rpx;
+  height: 160rpx;
+}
+.down-sp{
+  display: flex;
+  flex-wrap: wrap;
+}
+.down-item{
+  width: 100%;
+}

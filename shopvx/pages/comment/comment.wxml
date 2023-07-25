@@ -1,0 +1,4 @@
+<view class="wrapper">
+  <input class="input" bindinput="onInput" data-name="comment" placeholder="请评论"/>
+</view>
+<button class="btn" bindtap="submit" type="defult" size="default"><text class="btn-text">添加评论</text></button>

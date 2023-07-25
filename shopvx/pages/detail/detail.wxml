@@ -1,0 +1,26 @@
+<image  mode="aspectFill" src="{{api}}{{item.logo}}"></image>
+<view class=" detail" style="padding: 20rpx;">
+  <view >
+    <image catchtap="detail" class="detail-left"  mode="aspectFit" src="{{judcollect==0?'/image2/collect.png':'/image2/collectfill.png'}}"></image>
+  </view>
+  <view class="detail-right">
+    <view style="font-weight: bold;">{{item.product}}</view>
+    <view>{{item.price}}元</view>
+    <view>还剩{{item.num}}个</view>
+    <view>{{item.ftime}}</view>
+  </view>
+</view>
+
+<view style="padding: 20rpx;" wx:for="{{comments}}" wx:key="item">
+  <view class="down-sp-text" style="font-weight: bold;">{{item.user}}说：</view>
+  <view class="down-sp-text">{{item.comment}}</view>
+  <view class="down-sp-text">{{item.ftime}}</view>
+</view>
+<view class="bag-down">
+  <button class="bag-left" bindtap="cate_comment">评论
+  </button>
+  <button class="bag-one" bindtap="cate">加入购物袋
+  </button>
+  <button class="bag-one" bindtap="cate_order">立即购买
+  </button>
+</view>

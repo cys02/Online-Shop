@@ -1,0 +1,5 @@
+<view class="wrapper">
+  <input class="input" bindinput="onInput" data-name="info" placeholder="概述"/>
+  <input class="input" bindinput="onInput" data-name="description" placeholder="详细信息"/>
+</view>
+<button class="btn" bindtap="submit" type="defult" size="default"><text class="btn-text">添加信息</text></button>

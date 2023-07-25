@@ -1,0 +1,16 @@
+.wrapper{
+  padding:50rpx;
+}
+.input{
+  padding: 30rpx;
+  border-bottom: 1rpx solid black;
+}
+.btn{
+  border-radius: 0;
+  background-color: black;
+}
+.btn-text{
+  color: white;
+  font-weight: 100;/*字体加粗*/
+  font-size: 12pt;
+}

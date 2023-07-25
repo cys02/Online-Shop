@@ -1,0 +1,47 @@
+.swiper{
+  width: 100%;
+}
+.father{
+  overflow: hidden;/*里面用了浮动，清除浮动的影响*/
+}
+.category{
+  line-height: 80rpx;/*行高*/
+  height: 80rpx;/*行高和高度一直时垂直居中*/
+  border-bottom: 1rpx solid rgb(12, 12, 12);
+}
+.active{
+  background: rgb(24, 24, 24);/*范围0-1*/
+  height: 73rpx;
+  border-bottom: 6rpx solid rgb(5, 5, 5);
+  font-weight: bold;/*字体加粗*/
+  color: white;
+}
+.left{
+  width: 180rpx;
+  border-right: 1rpx solid rgb(29, 28, 28);
+  text-align: center;/*水平居中*/
+  float: left;/*左浮动*/
+}
+.right{
+  overflow: hidden;/*填充剩余宽度*/
+}
+.commodity{
+  overflow: hidden;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.logo{
+  margin-right: 20rpx;
+  float:left;
+  width: 160rpx;
+  height: 160rpx;
+}
+.info{
+  overflow: hidden;
+}
+.product{
+  font-weight: bold;
+}
+.price{
+  margin-top: 10rpx;
+}

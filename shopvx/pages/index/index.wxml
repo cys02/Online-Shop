@@ -1,0 +1,64 @@
+
+<swiper class="swiper"
+  indicator-dots="{{false}}">
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/biao.jpg"></image> 
+  </swiper-item>
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/bao.jpg"></image> 
+  </swiper-item>
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/xie.jpg"></image> 
+  </swiper-item>
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/yi.jpg"></image> 
+  </swiper-item>
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/zhubao.jpg"></image> 
+  </swiper-item>
+</swiper> 
+<text class="swiper-text">百变造型新体验，等你邂逅</text>
+<button class="swiper-btn" bindtap="cate" style="width: 45vw;height: 9vh;"><text class="swiper-btn-text" >即刻探索</text></button>
+
+<view class="father">
+  <view>
+    <text class="down-text">珠宝</text>
+    <image mode="aspectFill" style="width: 98%;margin: 3px; " src="/swiper/zhubao.jpg"></image> 
+    <view class="down-sp">
+      <view catchtap="detail" data-item="{{item}}" class="down-item" wx:for="{{zb}}" wx:key="item"><image mode="aspectFit" style="width: 97%;margin: 3px; " src="{{api}}{{item.logo}}"></image>
+        <view style="font-weight: bold;">{{item.product}}</view>
+        <view>￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class="down-text">箱包</text>
+    <image mode="aspectFill" style="width: 98%;margin: 3px; " src="/swiper/bao.jpg"></image> 
+    <view class="down-sp">
+      <view catchtap="detail" data-item="{{item}}" class="down-item" wx:for="{{xb}}" wx:key="item"><image mode="aspectFit" style="width: 97%;margin: 3px; " src="{{api}}{{item.logo}}"></image>
+        <view class="down-sp-text" style="font-weight: bold;">{{item.product}}</view>
+        <view class="down-sp-text">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class="down-text">鞋履</text>
+    <image mode="aspectFill" style="width: 98%;margin: 3px; " src="/swiper/xie.jpg"></image> 
+    <view class="down-sp">
+      <view catchtap="detail" data-item="{{item}}" class="down-item" wx:for="{{xl}}" wx:key="item"><image mode="aspectFit" style="width: 97%;margin: 3px; " src="{{api}}{{item.logo}}"></image>
+        <view style="font-weight: bold;">{{item.product}}</view>
+        <view>￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <text class="down-text">腕表</text>
+    <image mode="aspectFill" style="width: 98%;margin: 3px; " src="/swiper/biao.jpg"></image> 
+    <view class="down-sp">
+      <view catchtap="detail" data-item="{{item}}" class="down-item" wx:for="{{wb}}" wx:key="item"><image mode="aspectFit" style="width: 97%;margin: 3px; " src="{{api}}{{item.logo}}"></image>
+        <view style="font-weight: bold;">{{item.product}}</view>
+        <view>￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>

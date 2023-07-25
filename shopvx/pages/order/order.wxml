@@ -1,0 +1,7 @@
+<view class="wrapper">
+  <input class="input" bindinput="onInput" data-name="name" placeholder="请输入收件人"/>
+  <input class="input" bindinput="onInput" data-name="mobile" placeholder="请输入手机号"/>
+  <input class="input" bindinput="onInput" data-name="address" placeholder="请输入地址"/>
+  <input class="input" bindinput="onInput" data-name="count" placeholder="请输入数量"/>
+</view>
+<button class="btn" bindtap="submit" type="defult" size="default"><text class="btn-text">提交订单</text></button>

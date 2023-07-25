@@ -1,0 +1,37 @@
+.bag-down{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 50px; 
+  box-shadow: 0px 0px 10px 5px rgba(218, 215, 215, 0.3); 
+}
+.bag-left{
+  flex:1;
+}
+.bag-one{
+  flex: 2;
+}
+.bag-two{
+  flex:2；
+}
+.detail{
+  display: flex;
+}
+.detail-left{
+  flex:1;
+  margin-right: 20rpx;
+  float:left;
+  width: 160rpx;
+  height: 160rpx;
+}
+.detail-right{
+  flex:1;
+}
+.select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

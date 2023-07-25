@@ -1,0 +1,28 @@
+<swiper class="swiper" indicator-dots="true"
+  interval="4000" duration="1000" autoplay="true">
+  <swiper-item wx:for="{{hots}}" wx:key="item">
+    <image mode="aspectFill" src="{{api}}{{item.logo}}"></image>
+  </swiper-item>
+</swiper> 
+
+<view class="father">
+  <view class="left">
+    <view wx:for="{{categorys}}" wx:key="item" 
+    bindtap="cateClick" data-cid="{{item.id}}"
+    class="{{cid==item.id?'category active':'category'}}">{{item.category}}</view>
+  </view>
+  <!-- 当一个区域有多个点击事件catchtap不会产生冲突 -->
+  <view class="right">
+      <view class ="commodity" 
+        catchtap="detail" data-item="{{item}}"
+        wx:for="{{products}}" wx:key="item">
+        <image class="logo" mode="aspectFill"
+          src="{{api}}{{item.logo}}"></image>
+        <view class="info">
+          <view class="product">{{item.product}}</view>
+          <view class="price">￥{{item.price}}</view>
+          <view class="time">{{item.ftime}}</view>
+        </view>
+      </view>
+  </view>
+</view>

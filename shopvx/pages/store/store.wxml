@@ -1,0 +1,5 @@
+<swiper class="swiper" indicator-dots="{{false}}" vertical="true">
+  <swiper-item class="swiper-item">
+    <image class="swiper-img" mode="aspectFill" src="/swiper/biao.jpg"></image> 
+  </swiper-item>
+</swiper> 
