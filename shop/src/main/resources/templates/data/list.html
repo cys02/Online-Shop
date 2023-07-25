@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="../../../js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="../../../js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <!-- 步骤一：引入echarts.js -->
+    <script src="../../../js/echarts.min.js"></script>
+</head>
+<body>
+<!-- 步骤二：准备一个呈现图表的盒子 -->
+<div style="text-align: center">
+    <p  id="pic2" style="width:1000px;height:400px; display: inline-block"></p>
+    <p  id="pic3" style="width:500px;height:400px; display: inline-block"></p>
+</div>
+<div style="text-align: center">
+    <p  id="pic4" style="width:500px;height:400px; display: inline-block"></p>
+    <p  id="pic1" style="width:1000px;height:400px; display: inline-block"></p>
+</div>
+
+
+
+
+
+
+<script>
+    window.onload = function () {
+        echart01();
+        echart02();
+        echart03();
+        echart04();
+        function echart01() {
+            // var mCharts = echarts.init(document.querySelector('div'));
+            var mCharts = echarts.init(document.getElementById('pic1'));
+            // 步骤四：准备配置项
+            var option = {
+                xAxis: {
+                    type: 'category',
+                    data: [] // 初始为空
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    name: '语文',
+                    type: 'bar',
+                    data: [] // 初始为空
+                }]
+            };
+
+            // 步骤五：将配置项设置给echarts实例对象
+            mCharts.setOption(option);
+
+            // 步骤六：从后端获取数据
+            fetchDataFromBackend();
+
+            // 从后端获取数据的函数
+            function fetchDataFromBackend() {
+                // 发送请求到后端，获取数据
+                $.ajax({
+                    url: 'http://localhost:8080/category/getdata', // 替换为后端接口的URL
+                    method: 'GET',
+                    success: function(response) {
+                        // 解析响应数据
+                        console.log(response)
+                        var data = response;
+                        // 提取x轴的元素和对应的值
+                        var xAxisData = data.xAxisData;
+                        var seriesData = data.seriesData;
+                        console.log(xAxisData)
+                        console.log(seriesData)
+                        // 更新ECharts图表的配置项
+                        option.xAxis.data = xAxisData;
+                        option.series[0].data = seriesData;
+
+                        // 刷新图表
+                        mCharts.setOption(option);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        }
+
+        function echart02() {
+            // var mCharts = echarts.init(document.querySelector('div'));
+            var mCharts = echarts.init(document.getElementById('pic2'));
+            // 步骤四：准备配置项
+            var option = {
+                xAxis: {
+                    type: 'category',
+                    data: []
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        data: [820, 932, 901, 934, 1290, 1330, 1320],
+                        type: 'line',
+                        smooth: true
+                    }
+                ]
+            };
+
+            // 步骤五：将配置项设置给echarts实例对象
+            mCharts.setOption(option);
+
+            // 步骤六：从后端获取数据
+            fetchDataFromBackend();
+
+            // 从后端获取数据的函数
+            function fetchDataFromBackend() {
+                // 发送请求到后端，获取数据
+                $.ajax({
+                    url: 'http://localhost:8080/category/getdata', // 替换为后端接口的URL
+                    method: 'GET',
+                    success: function(response) {
+                        // 解析响应数据
+                        console.log(response)
+                        var data = response;
+                        // 提取x轴的元素和对应的值
+                        var xAxisData = data.xAxisData;
+                        var seriesData = data.seriesData;
+                        console.log(xAxisData)
+                        console.log(seriesData)
+                        // 更新ECharts图表的配置项
+                        option.xAxis.data = xAxisData;
+                        option.series[0].data = seriesData;
+
+                        // 刷新图表
+                        mCharts.setOption(option);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        }
+
+        function echart03() {
+            // var mCharts = echarts.init(document.querySelector('div'));
+            var mCharts = echarts.init(document.getElementById('pic3'));
+            // 步骤四：准备配置项
+            var option = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '5%',
+                    left: 'center'
+                },
+                series: [
+                    {
+                        name: 'Access From',
+                        type: 'pie',
+                        radius: ['50%', '30%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 10,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: 40,
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: []
+                    }
+                ]
+            };
+
+            // 步骤五：将配置项设置给echarts实例对象
+            mCharts.setOption(option);
+
+            // 步骤六：从后端获取数据
+            fetchDataFromBackend();
+
+            // 从后端获取数据的函数
+            function fetchDataFromBackend() {
+                // 发送请求到后端，获取数据
+                $.ajax({
+                    url: 'http://localhost:8080/category/getdata', // 替换为后端接口的URL
+                    method: 'GET',
+                    success: function(response) {
+                        // 解析响应数据
+                        console.log(response)
+                        var data = response;
+                        // 提取x轴的元素和对应的值
+                        var xAxisData = data.xAxisData;
+                        var seriesData = data.seriesData;
+                        // 更新ECharts图表的配置项
+                        // option.xAxis.data = xAxisData;
+                        // option.series[0].data = seriesData;
+
+                        for(var i=0;i<6;i++){
+                            option.series[0].data.push({value: seriesData[i.toString()], name: xAxisData[i.toString()]})
+                        }
+                        console.log(111111111111111)
+                        console.log(option.series[0].data)
+                        // 刷新图表
+                        mCharts.setOption(option);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        }
+
+
+        function echart04() {
+            // var mCharts = echarts.init(document.querySelector('div'));
+            var mCharts = echarts.init(document.getElementById('pic4'));
+            // 步骤四：准备配置项
+            option = {
+                title: {
+                    text: 'Basic Radar Chart'
+                },
+                legend: {
+                    data: ['Allocated Budget', 'Actual Spending']
+                },
+                radar: {
+                    // shape: 'circle',
+                    indicator: [
+                        { name: 'Sales', max: 6500 },
+                    ]
+                },
+                series: [
+                    {
+                        name: 'Budget vs spending',
+                        type: 'radar',
+                        data: [
+                        ]
+                    }
+                ]
+            };
+
+            // 步骤五：将配置项设置给echarts实例对象
+            mCharts.setOption(option);
+
+            // 步骤六：从后端获取数据
+            fetchDataFromBackend();
+
+            // 从后端获取数据的函数
+            function fetchDataFromBackend() {
+                // 发送请求到后端，获取数据
+                $.ajax({
+                    url: 'http://localhost:8080/category/getdata', // 替换为后端接口的URL
+                    method: 'GET',
+                    success: function(response) {
+                        // 解析响应数据
+                        console.log(response)
+                        var data = response;
+                        // 提取x轴的元素和对应的值
+                        var xAxisData = data.xAxisData;
+                        var seriesData = data.seriesData;
+                        // 更新ECharts图表的配置项
+                        // option.xAxis.data = xAxisData;
+                        // option.series[0].data = seriesData;
+
+                        for(var i=0;i<6;i++){
+                            option.radar.indicator.push({name: xAxisData[i.toString()], max: 5})
+                        }
+                        option.series[0].data.push({value: seriesData, name: ""})
+                        // 刷新图表
+                        mCharts.setOption(option);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
