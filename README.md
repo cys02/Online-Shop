@@ -1,2 +1,4 @@
 # Online-Shop
-网上商城：Web后台&amp;微信小程序前台
+山东科技大学软件工程专业2020级软件开发生产实习
+shop：Java后端+Web后台
+shopvx：微信小程序前台
